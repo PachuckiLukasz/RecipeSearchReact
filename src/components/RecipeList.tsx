@@ -30,7 +30,7 @@ const RecipeList: React.FC<RecipeListProps> = ({ recipes }) => {
         <RecipeCard
           key={index}
           onClick={() => handleToggle(index)}
-          expanded={expandedIndex === index}
+          expanded={expandedIndex === index ? true : undefined}
         >
           <img src={recipe.recipe.image} alt={recipe.recipe.label} />
           <p>{recipe.recipe.label}</p>

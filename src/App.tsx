@@ -5,6 +5,7 @@ import SearchBar from "./components/SearchBar";
 import RecipeList from "./components/RecipeList";
 import RecipeDetail from "./components/RecipeDetail";
 import getRecipes from "./api/recipes";
+import GlobalStyles from "./styles/GlobalStyles";
 
 const App: React.FC = () => {
   const [recipes, setRecipes] = useState([]);
@@ -29,6 +30,7 @@ const App: React.FC = () => {
 
   return (
     <div>
+      <GlobalStyles />
       <Header />
       <Routes>
         <Route

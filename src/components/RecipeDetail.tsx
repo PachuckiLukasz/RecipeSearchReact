@@ -1,10 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { RecipeDetailContainer } from "../styles/RecipeDetailStyles";
 
 const RecipeDetail: React.FC = () => {
   const { recipeId } = useParams<{ recipeId: string }>();
 
-  // Check if recipeId is defined
   if (!recipeId) {
     return <div>Invalid recipe ID.</div>;
   }
@@ -16,7 +16,7 @@ const RecipeDetail: React.FC = () => {
   }
 
   return (
-    <div>
+    <RecipeDetailContainer>
       <h2>{recipe.recipe.label}</h2>
       <img src={recipe.recipe.image} alt={recipe.recipe.label} />
       <h3>Ingredients</h3>
@@ -29,7 +29,7 @@ const RecipeDetail: React.FC = () => {
       </ul>
       <h3>Instructions</h3>
       <p>{recipe.recipe.instructions}</p>
-    </div>
+    </RecipeDetailContainer>
   );
 };
 
